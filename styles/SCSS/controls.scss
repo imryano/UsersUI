@@ -1,0 +1,133 @@
+@import 'globals';
+
+html, body{
+	height: 100%;
+}
+body{
+	background-color: $color-main-back;
+	font-size: 12pt;
+	font-family: $font-stack;
+	margin: 0px;
+}
+
+h3{
+	padding: 0;
+	margin: 0;
+	color: $color-active;
+	display: inline-block;
+}
+
+form{
+	border: 0px solid $color-inactive;
+	border-radius: 5px;
+	background-color: $color-form-back;
+
+	input{
+		@extend .control;
+		
+		&[type="text"], &[type="password"]{
+			border-width: $border-width-underline;
+			background-color: transparent;
+			
+			&:focus {
+				border-width: $border-width-underline-active;
+				color: $color-active;
+
+				& + label {
+					top: 0;
+					font-size: $font-size-small;
+					color: $color-active;
+					padding: 0px;
+					padding-left: $padding-control;
+				}
+			}
+		}
+
+		&[type="password"]{
+			font-family: Verdana;
+			letter-spacing: 2px;
+			font-weight: bold;
+		}
+		
+		&[type="submit"], &[type="button"]{
+			background-color: $color-active;
+			color: $color-main-back;
+			box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+			transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+			&:hover{
+				color: $color-active;
+				background-color: $color-main-back;
+			}
+
+			&:active{
+				box-shadow: none;
+			}
+		}
+		
+		&:valid {
+			background-color: $color-main-back;
+			color: $color-text;
+			
+			& + label {
+				color: $color-inactive;
+				top: 0;
+				font-size: $font-size-small;
+				padding: 0px;
+				padding-left: $padding-control;
+			}
+		}
+	}
+	
+//	& > .row > div{
+//		position: relative;
+//	}
+	
+//	& > .row > div > label {
+//		position: absolute;
+//	}
+	
+	& label {
+		@extend .noSelect;
+
+		position: absolute;
+		top: $padding-control;
+		bottom: 0;
+		left: $padding-control;
+		width: 100%;
+		transition: padding 0.2s, font-size 0.2s;
+		color: $color-inactive;
+		padding: $padding-control;
+	}
+}
+
+@media (min-width: 768px){
+	.login {
+		position: absolute;
+		top: 25%;
+		z-index: 2;
+	}
+
+	.loginSection{
+	  height: 100%;
+	}
+}
+
+.loginSection{
+	  display: flex;
+	  justify-content: center;
+	  align-items: center; 
+	  text-align: center;
+	}
+
+.header {
+	text-align: center;
+}
+
+.stage1 {
+
+}
+
+.stage2 {
+	display: none;	
+}

@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+$font-stack: 'Roboto', sans-serif;
+$font-size-default: 12pt;
+$font-size-small: 8pt;
+
+$color-active: White;
+$color-inactive: Gray;
+$color-text: Black;
+$color-form-back: transparent;
+$color-main-back: DeepSkyBlue;
+
+$border-width: 0px;
+$border-width-underline: 0 0 1 0;
+$border-width-active: $border-width + 0px;
+$border-width-underline-active: $border-width-underline;
+
+$padding-control: 10px;
+
+.noSelect{
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.control {
+	width: 100%;
+	margin: 0;
+	border: $border-width $color-inactive solid;
+	font-family: $font-stack;
+	font-size: $font-size-default;
+	padding: $padding-control;
+
+	&:focus{
+		outline: none;
+		border: $border-width-active $color-active solid;
+	}
+}

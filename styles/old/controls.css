@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body{
+	background-color: DeepSkyBlue;
+	font-size: 12pt;
+	font-family: 'Roboto', sans-serif;
+}
+
+h3{
+	text-align: center;
+	padding: 0;
+	margin: 0;
+}
+
+form{
+	border: 1px solid LightGray;
+	border-radius: 5px;
+	background-color: white;
+}
+
+input[type="text"], input[type="password"]{
+	width: 100%;
+	margin: 0;
+	border: 1px LightGray solid;
+	border-width: 0px 0px 1px 0px;
+	background-color: transparent;
+	text-align: bottom;
+	font-family: 'Roboto', sans-serif;
+	font-size: 12pt;
+	padding: 3px;
+}
+
+input:focus{
+	outline: none;
+	border: 1px DeepSkyBlue solid;
+	border-width: 0px 0px 1px 0px;
+}
+
+input[type="submit"], input[type="button"]{
+	width: 100%;
+	margin: 0;
+	border: 1px LightGray solid;
+	background-color: white;
+	text-align: bottom;
+	font-family: 'Roboto', sans-serif;
+	font-size: 12pt;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+input[type="submit"]:active, input[type="button"]:active{
+	border: 1px DeepSkyBlue solid;
+	background-color: DeepSkyBlue;
+}
+
+
+form > div > div{
+  position: relative;
+}
+form > div > div > label {
+  position: absolute;
+}
+
+form.go-top label {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	transition: padding 0.2s, font-size 0.2s;
+	color: LightGray;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	padding: 15px;
+}
+form.go-top input:focus + label, form input:valid + label{
+  top: 0;
+  font-size: 8pt;
+  color: DeepSkyBlue;
+  padding: 0px;
+  padding-left: 15px;
+}
+
+form input:valid + label{
+	color: LightGray;
+}
+
+form input:valid {
+  background-color: white;
+}
