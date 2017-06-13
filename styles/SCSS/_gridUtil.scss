@@ -1,0 +1,58 @@
+.row-#{$numCols}::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@for $i from 0 through $numCols {
+	.row-#{$numCols} .col-#{$i} {
+		width: (100% / $numCols) * $i;
+	}
+	.row-#{$numCols} .push-#{$i} {
+		margin-left: (100% / $numCols) * $i;
+	}
+} 
+
+@media #{$mediaSmall} {
+	@for $i from 0 through $numCols {
+		.row-#{$numCols} .col-s-#{$i} {
+			width: (100% / $numCols) * $i;
+		}
+		.row-#{$numCols} .push-s-#{$i} {
+			margin-left: (100% / $numCols) * $i;
+		}
+	} 
+}
+
+@media #{$mediaMedium} {
+	@for $i from 0 through $numCols {
+		.row-#{$numCols} .col-m-#{$i} {
+			width: (100% / $numCols) * $i;
+		}
+		.row-#{$numCols} .push-m-#{$i} {
+			margin-left: (100% / $numCols) * $i;
+		}
+	} 
+}
+
+@media #{$mediaLarge} {
+	@for $i from 0 through $numCols {
+		.row-#{$numCols} .col-l-#{$i} {
+			width: (100% / $numCols) * $i;
+		}
+		.row-#{$numCols} .push-l-#{$i} {
+			margin-left: (100% / $numCols) * $i;
+		}
+	} 
+}
+
+@media #{$mediaLarge} {
+	@for $i from 0 through $numCols {
+		.row-#{$numCols} .col-xl-#{$i} {
+			width: (100% / $numCols) * $i;
+		}
+		.row-#{$numCols} .push-xl-#{$i} {
+			margin-left: (100% / $numCols) * $i;
+		}
+	} 
+}

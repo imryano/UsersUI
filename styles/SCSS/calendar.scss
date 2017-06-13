@@ -1,0 +1,104 @@
+$color-main: #4CAF50;
+
+$color-border: $color-main;
+$color-currentBackground: lighten($color-main, 30%);
+$color-oomBackground: lighten($color-main, 20%);
+$color-todayBackground: lighten($color-main, 36%);
+$color-hoverBackground: lighten($color-main, 40%);
+
+.month {
+	border: solid $color-border;
+	border-width: 0 0 .05em .05em;
+}
+
+.dayList{
+	border: solid $color-border;
+	border-width: 0 0 0 .05em;
+}
+
+.date{
+	padding: 0.3em;
+}
+
+.day {
+	border: solid $color-border;
+	border-width: .05em .05em 0 0;
+	text-align: right;
+	vertical-align: top;
+	background-color: $color-currentBackground;
+	&::before{
+		content: "";
+    	display: block;
+    	padding-top: 85%;
+	}
+	&:hover{
+		background-color: $color-hoverBackground;
+	}
+}
+
+.dayList > div {
+	border: solid $color-border;
+	border-width: .05em .05em 0 0;
+	text-align: center;
+	background-color: white;
+}
+
+.outsideOfMonth{
+	background-color: $color-oomBackground;
+	color: #757575;
+}
+
+.today {
+	background-color: $color-todayBackground;
+}
+
+.day .content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.previousYear, .previousMonth, .nextYear, .nextMonth, .monthLabel{
+	display: inline-block;
+} 
+
+.header {
+	background-color: $color-todayBackground;
+	border: solid $color-border;
+	border-width: 1px 1px 0 1px;
+	& button {
+		background-color: $color-oomBackground;
+		border: 0.05em solid $color-border;
+		padding: 10% 40%;
+		color: $color-border;
+		&:focus{
+			outline: none;
+			border-color: $color-oomBackground;
+			background-color: $color-border;
+			color: $color-oomBackground;
+		}
+	}
+
+	& .previousYear button:after {
+    	content: "\25C0 \25C0";
+	}
+
+	& .previousMonth button:after {
+    	content: "\25C0";
+	}
+
+	& .nextMonth button:after {
+    	content: "\25B6";
+	}
+
+	& .nextYear button:after {
+    	content: "\25B6 \25B6";
+	}
+
+	& .thisMonth{
+		padding: 3% 0;
+		font-weight: bold;
+	}
+}

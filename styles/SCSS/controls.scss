@@ -120,6 +120,14 @@ form{
 	  text-align: center;
 	}
 
-.header {
+.center{
 	text-align: center;
+}
+
+.errorMessage{
+	@include alertMessage("Error");
+}
+
+.successMessage{
+	@include alertMessage("Success");
 }
