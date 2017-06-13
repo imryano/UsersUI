@@ -3,44 +3,45 @@ function initLoginApp() {
 		el: 'loginApp',
 		template: `
 		<form class="go-top col-12 login">
-			<div class="col-12 col-m-5 col-l-6 push-xl-2 col-xl-3 loginSection">
-				<div class="col-12 col-m-4">
-					TEST
+			<div class="col-12 col-m-5 push-xl-2 col-xl-3 loginSection">
+				<div class="col-0 col-m-12"></div>
+				<div class="col-0 col-m-12"></div>
+				<div class="col-0 col-m-12"></div>
+				<div class="col-0 col-m-12"></div>
+				<div class="col-12 col-m-12">
+					<h1>Booker.com.au</h1> 	
 				</div>
+				<div class="col-0 col-m-12"></div>
+				<div class="col-0 col-m-12"></div>
+				<div class="col-0 col-m-12"></div>
+				<div class="col-0 col-m-12"></div>
 			</div>
-			<div class="col-12 col-m-7 col-l-6 col-xl-5">
-				<div>
-					<div class="col-12">
-						<h3>Please log in to continue</h3>
-					</div>
-					<div class="col-12">
-						<input id="username" name="username" type="text" v-model="username" required tab-index="1">
-						<label for="username" class="placeholder-text">Username</label>
-					</div>
-					<div class="col-12">
-						<input id="password" name="password" type="password" v-model="password" required v-on:keyup="checkEnter"  tab-index="2">
-						<label for="password" class="placeholder-text">Password</label>
-					</div>
-					<div class="col-12">
-						<input id="login" name="login" type="button" value="Log in" v-on:click="tryLogin" tab-index="3">
-					</div>				
+			<div class="col-12 col-m-7 col-xl-5 loginForm">
+				<div class="col-12 center">
+					<h3>Please log in to continue</h3>
 				</div>
-				<div class="row">
+				<div class="col-12">
+					<div class="loginWrapper col-12">
+						<div class="col-12">
+							<input id="username" placeholder="Username" name="username" type="text" v-model="username" required tab-index="1">
+						</div>
+						<hr />
+						<div class="col-12">
+							<input id="password" placeholder="Password" name="password" type="password" v-model="password" required v-on:keyup="checkEnter"  tab-index="2">
+						</div>
+					</div>	
+				</div>				
+				<div class="col-12">
+					<input id="login" name="login" type="button" value="Log in" v-on:click="tryLogin" tab-index="3">			
+				</div>
+				<div class="row col-12" v-if="error != '' || success != ''">
 					<div class="col-12 errorMessage" v-if="error != ''">
 						{{error}}
 					</div>
 					<div class="col-12 successMessage"  v-if="success != ''">
 						{{success}}
 					</div>
-				</div>
-				<!--<div class="row">
-					<div class="col-5">
-						{{username}}
-					</div>
-					<div class="push-1 col-5">
-						{{password}}
-					</div>
-				</div>-->
+				</div>			
 			</div>
 		</form>`,
 
@@ -77,7 +78,7 @@ function initLoginApp() {
 					}
 				})
 				.catch(function(e){
-					vc.error = e;
+					vc.error = "There was a problem connecting to the authentication service. Please try again shortly.";
 				});
 				(event.target).style.display = "";
 				return false;

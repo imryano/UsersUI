@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-$font-stack: 'Roboto', sans-serif;
+$font-stack: 		'Roboto', sans-serif;
 $font-size-default: 12pt;
-$font-size-small: 8pt;
+$font-size-small: 	8pt;
 
-$color-active: White;
-$color-inactive: Gray;
-$color-text: Black;
-$color-form-back: transparent;
-$color-main-back: DeepSkyBlue;
+$color-active: 		White;
+$color-inactive: 	Gray;
+$color-text: 		Black;
+$color-form-back: 	transparent;
+$color-main-back: 	DeepSkyBlue;
+$color-input-back-focus: #EEEEEE;
 
 //Design: Google Material Colors
 //Background: 200
@@ -38,6 +39,18 @@ $padding-control: 10px;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+}
+
+@mixin box-shadow($vars){
+	-webkit-box-shadow: $vars;
+	-moz-box-shadow: $vars;
+	box-shadow: $vars;
+}
+
+@mixin border-radius($vars){
+	border-radius: $vars;
+	-moz-border-radius: $vars;
+	-webkit-border-radius: $vars;
 }
 
 .control {
